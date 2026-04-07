@@ -2,6 +2,7 @@ import { useState } from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { dummyPizzaToppingsFromApi } from "./dummy-pizza-toppings";
+import { Form } from "react-bootstrap";
 
 const PizzaToppings = () => {
 
@@ -70,19 +71,37 @@ const PizzaToppings = () => {
       >
         None
       </Button>
+      <Form>
       {
         availablePizzaToppings.map(
             x => (
-                  <div
+                  <Form.Check
+                  key={x.name}
+                  id={x.name}
+                  label={`${x.name} ($${x.price.toFixed(2)})`}
+                  checked={x.checked}
                   className="my-2"
-                  >
-                  {
-                    `${x.name} ($${x.price.toFixed(2)})`
+                  onChange={
+                    () => setAvailablePizzaToppings(
+                      availablePizzaToppings.map(
+                        y => ({
+                          ...y,
+                          checked: y === x
+                           ? !y.checked
+                           : y.checked
+                           ,
+                        })
+                      )
+                    )
                   }
-                  </div>
+                  >
+                
+                  </Form.Check>
             )
          )
       }
+      </Form>
+      
 
       <h3>
         Total: {
