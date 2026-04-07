@@ -1,6 +1,13 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+const PizzaToppings = () => { return (
+  <h2>
+    Choose your pizza toppings...
+  </h2>
+  );
+};
+
 const App = () => {
 
   return (
@@ -8,6 +15,7 @@ const App = () => {
       <h1>
         React Components
       </h1>
+      <PizzaToppings />
     </div>
   );
 }
