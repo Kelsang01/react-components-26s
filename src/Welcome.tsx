@@ -31,10 +31,7 @@ const Welcome = () => {
                 </InputGroup>
 
                 <Button onClick={
-                            () => {
-                                setWelcomeMessage(`Hello, ${name}!`);
-                                setName("");
-                            }
+                            () => setWelcomeMessage(`Hello, ${name}!`)
                         }
                         variant="outline-primary"
                 >
