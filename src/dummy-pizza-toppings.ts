@@ -1,6 +1,6 @@
 export const dummyPizzaToppingsFromApi = [
   {
-    name: 'Pepperroni',
+    name: 'Pepperoni',
     price: 3.50,
   },
   {
