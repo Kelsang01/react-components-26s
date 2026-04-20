@@ -6,7 +6,7 @@ import Form from "react-bootstrap/Form";
 
 const PizzaToppings = () => {
   //
-  // React hooks...
+  // React hooks here...
   //
   const [availablePizzaToppings, setAvailablePizzaToppings] = useState(
     dummyPizzaToppingsFromApi.map(
