@@ -1,5 +1,20 @@
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+
 const PizzaToppings = () => {
-  return <h2>Choose your pizza toppings...</h2>;
+  return (
+    <Card>
+      <Card.Body>
+        <Card.Title className="mb-3">Choose your pizza toppings...</Card.Title>
+        <Button variant="outline-primary">All</Button>
+        <Button variant="outline-primary" className="ms-2">
+          None
+        </Button>
+        <div>Pizza Toppings go here...</div>
+        <h3>Total: $0.00</h3>
+      </Card.Body>
+    </Card>
+  );
 };
 
 export default PizzaToppings;
