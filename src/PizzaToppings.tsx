@@ -16,7 +16,9 @@ const PizzaToppings = () => {
   //
   // Calculate derived state, and other code...
   //
-
+  const total = availablePizzaToppings
+    .filter((x) => x.checked)
+    .reduce((acc, x) => acc + x.price, 0);
   //
   // Return JSX
   //
@@ -24,15 +26,32 @@ const PizzaToppings = () => {
     <Card>
       <Card.Body>
         <Card.Title className="mb-3">Choose your pizza toppings...</Card.Title>
-        <Button variant="outline-primary">All</Button>
-        <Button variant="outline-primary" className="ms-2">
+        <Button
+          variant="outline-primary"
+          onClick={() =>
+            setAvailablePizzaToppings(
+              availablePizzaToppings.map((x) => ({ ...x, checked: true })),
+            )
+          }
+        >
+          All
+        </Button>
+        <Button
+          variant="outline-primary"
+          onClick={() =>
+            setAvailablePizzaToppings(
+              availablePizzaToppings.map((x) => ({ ...x, checked: false })),
+            )
+          }
+          className="ms-2"
+        >
           None
         </Button>
         {availablePizzaToppings.map((x) => (
-          <div className="my-2">{`${x.name} (${x.price})`}</div>
+          <div className="my-2">{`${x.name} ($${x.price.toFixed(2)})`}</div>
         ))}
 
-        <h3>Total: $0.00</h3>
+        <h3>Total: {`$${total.toFixed(2)}`}</h3>
       </Card.Body>
     </Card>
   );
