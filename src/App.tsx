@@ -1,3 +1,5 @@
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import Welcome from "./Welcome";
 import PizzaToppings from "./PizzaToppings";
 import TsteeleComponent from "./TsteeleComponent";
