@@ -17,7 +17,6 @@ const App = () => {
     <div className="m-3">
       <h1>React Components</h1>
       <PizzaToppings />
-      <KnorbuComponent />
       <TsteeleComponent />
       <Welcome />
       <ThamiltonComponent />
@@ -27,6 +26,7 @@ const App = () => {
       <MrooneyButton />
       <LmeierComponent />
       <SkhangComponent />
+      <KnorbuComponent />
     </div>
   );
 };
