@@ -1,13 +1,16 @@
 import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
+const App = () => {
 
   return (
-    <>
+    <div
+      className='m-3'
+    >
       <h1>
         React Components
       </h1>
-    </>
+    </div>
   )
 }
 
