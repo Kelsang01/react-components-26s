@@ -1,7 +1,7 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PizzaToppings from './PizzaToppings';
-
+import KnorbuComponent from './KnorbuComponent';
 const App = () => {
 
   return (
@@ -12,6 +12,7 @@ const App = () => {
         React Components
       </h1>
       <PizzaToppings />
+      <KnorbuComponent />
     </div>
   );
 }
