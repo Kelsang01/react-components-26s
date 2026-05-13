@@ -1,14 +1,21 @@
+import { Card, ProgressBar } from 'react-bootstrap';
+
 const KnorbuComponent = () => {
 
   return (
-    <div
-      className='m-3'
-    >
-      <h1>
-        KnorbuComponent imported!
-      </h1>
-    </div>
-  );
+        <Card
+            className='my-3'
+        >
+            <Card.Body>
+                <Card.Title>
+                    Kelsang's Component
+                </Card.Title>
+                <div>
+                    <ProgressBar now={60} />
+                </div>
+            </Card.Body>
+        </Card>
+    );
 }
 
 export default KnorbuComponent
