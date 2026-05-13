@@ -12,12 +12,19 @@ const PizzaToppings = () => {
         dummyPizzaToppingsFromApi.map(
             x => ({
                 ...x,
-                checked: false
+                checked: true
             })
         )
     )
     // Calculate derived state, and other code...
-
+    const total = availablePizzaToppings
+        .filter(
+            x => x.checked,
+        )
+        .reduce(
+            (acc, x) => acc + x.price,
+            0,
+        )
     //
     // Return JSX
     //
@@ -29,11 +36,35 @@ const PizzaToppings = () => {
                 Choose your pizza toppings
             </Card.Title>
 
-            <Button variant="outline-primary">All</Button>
+            <Button 
+                variant="outline-primary"
+                onClick={
+                    () => setAvailablePizzaToppings(
+                        availablePizzaToppings.map(
+                            x => ({
+                                ...x,
+                                checked: true,
+                            })
+                        )
+                    )
+                }
+            >
+                All
+            </Button>
 
             <Button 
                 className="ms-2"
                 variant="outline-primary"
+                onClick={
+                    () => setAvailablePizzaToppings(
+                        availablePizzaToppings.map(
+                            x => ({
+                                ...x,
+                                checked: false,
+                            })
+                        )
+                    )
+                }
             >
                 None
             </Button>
@@ -43,7 +74,7 @@ const PizzaToppings = () => {
                         <div
                             className="my-2">
                             {
-                                `${x.name} (${x.price})`
+                                `${x.name} ($${x.price.toFixed(2)})`
                             }
                         </div>
                     )
@@ -53,7 +84,7 @@ const PizzaToppings = () => {
                 Pizza Toppings go here....
             </div>
             <h3>
-                Total: $0.00
+                Total: {`$${total.toFixed(2)}`}
             </h3>
         </Card.Body>
     </Card>
