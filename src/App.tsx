@@ -10,6 +10,7 @@ import ZsmuckerbryanComponent from "./ZsmuckerbryanComponent";
 import MrooneyButton from "./mrooneyButton";
 import LmeierComponent from "./LmeierComponent";
 import SkhangComponent from "./SkhangComponent";
+import KnorbuComponent from './KnorbuComponent';
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
       <MrooneyButton />
       <LmeierComponent />
       <SkhangComponent />
+      <KnorbuComponent />
     </div>
   );
 };
